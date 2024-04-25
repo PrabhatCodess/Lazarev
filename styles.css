@@ -134,6 +134,7 @@ nav button svg{
     flex-direction: column;
     align-items: center;
    justify-content: center;
+   position: relative;
 }
 
 #page1 h1{

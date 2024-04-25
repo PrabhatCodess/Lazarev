@@ -43,8 +43,42 @@ ScrollTrigger.refresh();
 
 }
 
+
+function lodingAnimation(){
+  
+var tl = gsap.timeline()
+tl.from("#page1",{
+  opacity:0,
+  duration:0.3,
+  delay:0.2
+
+})
+
+tl.from("#page1",{
+  transform:"scaleX(0.7) scaleY(0.2) translateY(80%)",
+  borderRadius:"100px",
+  duration:2,
+  ease:"eaxpo.out"
+
+})
+
+tl.from("nav",{
+  opacity:0,
+  delay:-0.2
+})
+
+
+tl.from("#page1 h1, #page1 p, #page1 Div",{
+  opacity:0,
+  duration:0.5,
+  stagger:0.2
+})
+
+}
+
+
 function navAnimation() {
-  var nav = document.querySelector("nav");
+  var nav = document.querySelector(".nav2");
 
   nav.addEventListener("mouseenter", function () {
     let tl = gsap.timeline();
@@ -161,6 +195,8 @@ function page10Animation(){
 
 locomotiveAnimation()
 
+lodingAnimation ()
+
 navAnimation ()
 
 page2Animation()
@@ -261,6 +297,8 @@ parents.forEach(function(elem){
    })
   
 })
+
+
 
 
 
