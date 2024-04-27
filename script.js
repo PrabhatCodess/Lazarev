@@ -177,8 +177,31 @@ function page3VideoAnimation(){
   })
 }
 
+
+function scrollAnimation(){
+  const observer = new IntersectionObserver((entries)  => {
+    entries.forEach((entry)  => {
+      console.log(entry)
+      if (entry.isIntersecting){
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+  
+    });
+  });
+  
+  
+  
+  
+  
+  const hiddenElements = document.querySelectorAll(".hidden");
+  hiddenElements.forEach((el) => observer.observe(el))  ;
+}
+
+
 function page10Animation(){
-  gsap.from("#btm10-part2 h4",{
+  gsap.from(".btm10-parts h4 ",{
     x:0,
     duration:1,
     scrollTrigger:{
@@ -193,6 +216,7 @@ function page10Animation(){
 })
 }
 
+
 locomotiveAnimation()
 
 lodingAnimation ()
@@ -204,6 +228,8 @@ page2Animation()
 page3VideoAnimation()
 
  page10Animation()
+
+ scrollAnimation()
 
 
 
@@ -297,12 +323,3 @@ parents.forEach(function(elem){
    })
   
 })
-
-
-
-
-
-
-
-
-
